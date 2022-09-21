@@ -2,6 +2,7 @@
 let i = 0;
 const sliderItem = document.querySelectorAll(".slider-main")
 const sliderDot = document.querySelectorAll(".slider-dot-item")
+const sliderNum = document.querySelectorAll("slider-counter--number")
 function sliderDotActive(i) {
     sliderDot.forEach((item, index)=>{
         item.classList.remove("slider-dot--active")
