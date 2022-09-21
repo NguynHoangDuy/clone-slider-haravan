@@ -1,7 +1,7 @@
 .container{
     max-width: 100%;
     position: relative;
-    height: 120px;
+    height: 130px;
     box-sizing: border-box;
     overflow: hidden;
     display: flex;
@@ -39,10 +39,10 @@ a{
 }
 .slider-item{
     max-width: 1540px;
-    max-height: 120px;
+    min-height: 150px;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 15px 10px 0;
+    padding: 0px 10px 0;
     padding-right: 50px;
     display: flex;
     text-align: center;
@@ -56,8 +56,9 @@ a{
     max-height: 58px;
 }
 .slider-content{
+    /* position: relative; */
     width: 540px;
-    padding: 8px 40px;
+    padding: 0px 40px;
     box-sizing: border-box;
 }
 
@@ -66,7 +67,7 @@ a{
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
-    margin-top: 8px;
+    padding-top: 5px;
     margin-bottom: 5px;
 }
 
@@ -75,7 +76,7 @@ a{
     font-size: 12px;
     text-transform: uppercase;
     color: #4e4e4e;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
 .slider-counter{
@@ -140,7 +141,7 @@ a{
 .slider-dot{
     position: absolute;
     top: 0;
-    right: 0;
+    right: 3px;
     z-index: 999;
     width: 20px;
     height: 100%;
@@ -180,7 +181,7 @@ a{
         font-size: 12px; 
     }
     .slider-item{
-        min-height: 120px;
+        min-height: 140px;
     }
 }
 
@@ -223,15 +224,21 @@ a{
 }
 @media screen and (max-width: 441px) {
     .slider-absolute{
-        position: absolute;
+        position: relative;
         top: 0;
+        width: 200%;
+    }
+    .slider-relative{
+        position: relative;
+        top: 0;
+        width: 200%;
     }
     .slider-content{
         width: 60%;
         padding: 0 8px;
     }
     .slider-voucher--img{
-        margin-top: 20px;
+        margin-top: 5px;
     }
     .container{
         height: 90px;
@@ -250,6 +257,9 @@ a{
         height: 7px;
         margin-bottom: 4px;
         border-radius: 50%;
+    }
+    .slider-link{
+        margin-top: 15px;
     }
 }
 @media screen and (max-width: 287px) {
