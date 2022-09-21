@@ -53,7 +53,6 @@ const slider = setInterval(()=>{
     sliderDotActive(i)
 }, 4000)
 
-clearInterval(slider)
 let listTime = []
 sliderItem.forEach((item)=>{
     listTime.push(new Date(item.dataset.time))
