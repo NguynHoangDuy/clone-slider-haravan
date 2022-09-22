@@ -1,37 +1,25 @@
 
 let i = 0;
+let zIndex = 0;
 const sliderItem = document.querySelectorAll(".slider-main")
 const sliderDot = document.querySelectorAll(".slider-dot-item")
 const sliderNum = document.querySelectorAll("slider-counter--number")
 function sliderDotActive(i) {
     sliderDot.forEach((item, index)=>{
-        item.classList.remove("slider-dot--active")
-        if(index === i)
-        {
-            item.classList.add("slider-dot--active")
-        }
+        setTimeout(()=>{
+            item.classList.remove("slider-dot--active")
+            if(index === i)
+            {
+                item.classList.add("slider-dot--active")
+            }
+        }, 10)      
     })
 }
 function sliderTransform(i) {
-    if(i === 0)
-    {
-        sliderItem.forEach((item) =>{
-            item.style = `transform: translateY(${100}%); transition: unset;`
-        })
+        sliderItem[i].style = ` z-index: ${zIndex++}; transform: translateY(-100%)`  
         setTimeout(()=>{
-            sliderItem.forEach((item) =>{
-                item.style = `transform: translateY(${i*100}%); transition: all 1s ease;`
-            })
-        }, 10)
-        
-    }
-    else{
-        sliderItem.forEach((item) =>{
-            item.style = `transform: translateY(${i*100}%); transition: all 1s ease;`
-        })
-    }
-    
-    
+            sliderItem[i].style = ` z-index: ${zIndex}; transform: translateY(0); transition: all 1.5s ease;`
+        }, 10) 
 }
 
 sliderDot.forEach((item, index)=>{
