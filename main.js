@@ -24,20 +24,6 @@ sliderDot.forEach((item, index)=>{
         i = index
         sliderDotActive(i)
         sliderTransform(i)
-        clearInterval(slider)
-        setTimeout(()=>{
-            let slider = setInterval(()=>{
-                if(i === 3)
-                {
-                    i = 0
-                }
-                else{
-                    i++
-                }
-                sliderTransform(i)
-                sliderDotActive(i)
-            }, 3000)
-        }, 100)
     })
 })
 let slider = setInterval(()=>{
