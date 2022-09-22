@@ -6,19 +6,17 @@ const sliderDot = document.querySelectorAll(".slider-dot-item")
 const sliderNum = document.querySelectorAll("slider-counter--number")
 function sliderDotActive(i) {
     sliderDot.forEach((item, index)=>{
-        setTimeout(()=>{
-            item.classList.remove("slider-dot--active")
-            if(index === i)
-            {
-                item.classList.add("slider-dot--active")
-            }
-        }, 10)      
+        item.classList.remove("slider-dot--active")
+        if(index === i)
+        {
+            item.classList.add("slider-dot--active")
+        }    
     })
 }
 function sliderTransform(i) {
         sliderItem[i].style = ` z-index: ${zIndex++}; transform: translateY(-100%)`  
         setTimeout(()=>{
-            sliderItem[i].style = ` z-index: ${zIndex}; transform: translateY(0); transition: all 1.5s ease;`
+            sliderItem[i].style = ` z-index: ${zIndex}; transform: translateY(0); transition: all 2s ease;`
         }, 10) 
 }
 
@@ -39,8 +37,9 @@ const slider = setInterval(()=>{
         i++
     }
     sliderTransform(i)
-    sliderDotActive(i)
-}, 4000)
+    setTimeout(sliderDotActive(i), 10)
+    
+}, 3000)
 
 let listTime = []
 sliderItem.forEach((item)=>{

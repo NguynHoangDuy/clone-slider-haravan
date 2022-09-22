@@ -12,10 +12,6 @@
     position: absolute;
     z-index: 0; 
 }
-
-.slider-main:first-child{
-    z-index: 1;
-}
 .slider-icon{
     max-height: 106px;
     max-width: 142px;
