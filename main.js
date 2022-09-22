@@ -16,19 +16,31 @@ function sliderDotActive(i) {
 function sliderTransform(i) {
         sliderItem[i].style = ` z-index: ${zIndex++}; transform: translateY(-100%)`  
         setTimeout(()=>{
-            sliderItem[i].style = ` z-index: ${zIndex}; transform: translateY(0); transition: all 2s ease;`
-        }, 10) 
+            sliderItem[i].style = ` z-index: ${zIndex}; transform: translateY(0); transition: all 1s ease;`
+        }, 1) 
 }
-
 sliderDot.forEach((item, index)=>{
     item.addEventListener("click", ()=>{
         i = index
         sliderDotActive(i)
         sliderTransform(i)
+        clearInterval(slider)
+        setTimeout(()=>{
+            let slider = setInterval(()=>{
+                if(i === 3)
+                {
+                    i = 0
+                }
+                else{
+                    i++
+                }
+                sliderTransform(i)
+                sliderDotActive(i)
+            }, 3000)
+        }, 100)
     })
 })
-
-const slider = setInterval(()=>{
+let slider = setInterval(()=>{
     if(i === 3)
     {
         i = 0
@@ -40,6 +52,7 @@ const slider = setInterval(()=>{
     setTimeout(sliderDotActive(i), 10)
     
 }, 3000)
+
 
 let listTime = []
 sliderItem.forEach((item)=>{
